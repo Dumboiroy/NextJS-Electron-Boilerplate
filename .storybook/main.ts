@@ -2,6 +2,12 @@ import type { StorybookConfig } from '@storybook/nextjs'
 import path from 'path'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 const config: StorybookConfig = {
 	stories: [
 		'../stories/**/*.mdx',
